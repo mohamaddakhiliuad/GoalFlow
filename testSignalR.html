@@ -1,0 +1,20 @@
+﻿<!doctype html>
+<html>
+<body>
+  <pre id="log"></pre>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+  <script>
+      const log = (m) => document.getElementById('log').textContent += m + "\n";
+      const goalId = "61A88893-552E-4850-8613-202B745D2403";
+      const conn = new signalR.HubConnectionBuilder()
+          .withUrl("http://localhost:5274/hubs/progress")
+          .build();
+
+      conn.on("ProgressLogged", evt => log("ProgressLogged: " + JSON.stringify(evt)));
+      conn.start()
+          .then(() => conn.invoke("JoinGoal", goalId))
+          .then(() => log("Joined goal: " + goalId))
+          .catch(err => log("ERR: " + err));
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+@GoalFlow.Api_HostAddress = http://localhost:5274
+
+GET {{GoalFlow.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

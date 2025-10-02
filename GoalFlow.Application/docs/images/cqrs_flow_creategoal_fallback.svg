@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600">
+  <style>
+    .box { fill: #ffffff; stroke: #333333; stroke-width: 2; rx: 8; ry: 8; }
+    .title { font: bold 16px sans-serif; }
+    .text { font: 14px sans-serif; }
+    .cluster { fill: none; stroke: #999999; stroke-dasharray: 6 4; }
+    .arrow { stroke: #333333; stroke-width: 2; marker-end: url(#arrowhead); fill: none; }
+    .dashed { stroke-dasharray: 5 5; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333333" />
+    </marker>
+  </defs>
+
+  <!-- Clusters -->
+  <rect x="20" y="40" width="260" height="520" class="cluster"/>
+  <text x="30" y="60" class="text" fill="#666">Presentation Layer</text>
+
+  <rect x="300" y="40" width="300" height="520" class="cluster"/>
+  <text x="310" y="60" class="text" fill="#666">Application Layer</text>
+
+  <rect x="620" y="40" width="260" height="520" class="cluster"/>
+  <text x="630" y="60" class="text" fill="#666">Domain Layer</text>
+
+  <rect x="900" y="40" width="280" height="520" class="cluster"/>
+  <text x="910" y="60" class="text" fill="#666">Infrastructure Layer</text>
+
+  <!-- Boxes -->
+  <rect x="60" y="120" width="200" height="60" class="box"/>
+  <text x="100" y="155" class="title">API (Minimal API)</text>
+  <text x="100" y="175" class="text">Swagger / ProblemDetails</text>
+
+  <rect x="340" y="120" width="240" height="60" class="box"/>
+  <text x="360" y="155" class="title">MediatR (CQRS)</text>
+
+  <rect x="340" y="220" width="240" height="70" class="box"/>
+  <text x="350" y="255" class="title">CreateGoalCommand</text>
+  <text x="350" y="275" class="text">+ FluentValidation</text>
+
+  <rect x="340" y="320" width="240" height="60" class="box"/>
+  <text x="350" y="355" class="title">CreateGoalHandler</text>
+
+  <rect x="340" y="420" width="240" height="60" class="box"/>
+  <text x="365" y="455" class="title">Result&lt;T&gt;</text>
+
+  <rect x="660" y="220" width="200" height="60" class="box"/>
+  <text x="690" y="255" class="title">Goal (Entity)</text>
+
+  <rect x="660" y="320" width="200" height="60" class="box"/>
+  <text x="675" y="355" class="title">Value Objects / Enums</text>
+
+  <rect x="940" y="200" width="220" height="60" class="box"/>
+  <text x="955" y="235" class="title">Repository (EF/Dapper)</text>
+
+  <rect x="940" y="300" width="220" height="60" class="box"/>
+  <text x="970" y="335" class="title">Transaction / UoW</text>
+
+  <rect x="940" y="400" width="220" height="60" class="box"/>
+  <text x="950" y="435" class="title">Jobs / Notifications</text>
+
+  <!-- Arrows -->
+  <line x1="260" y1="150" x2="340" y2="150" class="arrow"/>
+  <line x1="460" y1="180" x2="460" y2="220" class="arrow"/>
+  <line x1="460" y1="290" x2="460" y2="320" class="arrow"/>
+  <line x1="580" y1="350" x2="660" y2="250" class="arrow"/>
+  <line x1="580" y1="350" x2="660" y2="350" class="arrow"/>
+  <line x1="580" y1="350" x2="940" y2="230" class="arrow"/>
+  <line x1="940" y1="330" x2="860" y2="350" class="arrow"/>
+  <line x1="460" y1="380" x2="460" y2="420" class="arrow"/>
+  <line x1="580" y1="350" x2="940" y2="430" class="arrow" class="dashed"/>
+
+  <!-- Caption -->
+  <text x="60" y="100" class="title">CQRS Flow – CreateGoalCommand (Architecture View)</text>
+</svg>
