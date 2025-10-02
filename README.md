@@ -315,5 +315,5 @@ See `/docs` for concise decisions:
 ---
 
 ## License
-MIT (or your preferred license). Update `LICENSE` at repo root.
+MIT.
 
